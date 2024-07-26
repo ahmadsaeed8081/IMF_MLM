@@ -36,7 +36,7 @@ contract IMF_MLM
             
         }
 
-        address public usdt_address=0xa002862eCed94D808Cf8cEfC5CdBe170d34C25C3;
+        address public usdt_address=0x341343568948459e5b7017eDDb05110cfA3EF699;
 
         address public owner1=0x2039bF16F99cF99f41FA097D29e7ef326E665F2B;
         address public owner2=0xA2f92E94a7f86E34D742901D28fB768c02342881;
@@ -65,6 +65,10 @@ contract IMF_MLM
             user[msg.sender].total_donation+=Donation_Amount;
             user[msg.sender].ref_activate = true;
             user[msg.sender].ref_code = total_members+1;
+            user[msg.sender].donation_count++;
+            codeToAdress[total_members+1]=msg.sender;
+            Total_Donations += Donation_Amount;
+
             total_members++;
 
             queueData memory temp_data;
@@ -140,23 +144,23 @@ contract IMF_MLM
 
            if(user[msg.sender].ref_consecutive_count==5)
             {
-                Token(usdt_address).transferFrom(msg.sender,msg.sender,Donation_Amount*Direct_comm/100*10**6);
+                Token(usdt_address).transferFrom(msg.sender,msg.sender,Donation_Amount*Direct_comm/(100*10**6));
                 user[msg.sender].ref_consecutive_count=0;
-                user[msg.sender].ref_consecutive_earning += (Donation_Amount*Direct_comm)/100*10**6;
+                user[msg.sender].ref_consecutive_earning += (Donation_Amount*Direct_comm)/(100*10**6);
 
 
             }
             else
             {
-                Token(usdt_address).transferFrom(msg.sender,_ref,Donation_Amount*Direct_comm/100*10**6);
-                user[_ref].ref_earning+=Donation_Amount*Direct_comm/100*10**6;
+                Token(usdt_address).transferFrom(msg.sender,_ref,(Donation_Amount*Direct_comm)/(100*10**6));
+                user[_ref].ref_earning = user[_ref].ref_earning +  ((Donation_Amount*Direct_comm)/(100*10**6));
 
             }
 
             if(queue_array.length>0)
             {
-                Token(usdt_address).transferFrom(msg.sender,queue_array[0].add,Donation_Amount*queue_comm/100*10**6);
-                user[queue_array[0].add].queue_rew += (Donation_Amount*queue_comm)/100*10**6;
+                Token(usdt_address).transferFrom(msg.sender,queue_array[0].add,(Donation_Amount*queue_comm)/(100*10**6));
+                user[queue_array[0].add].queue_rew += (Donation_Amount*queue_comm)/(100*10**6);
 
                 if(queue_array[0].transfer_count==1)
                 {
@@ -169,12 +173,9 @@ contract IMF_MLM
                 }
 
             }
-            else
-            {
-                Token(usdt_address).transferFrom(msg.sender,address(this),Donation_Amount*queue_comm/100*10**6);
-            }
+
             
-            Token(usdt_address).transferFrom(msg.sender,marketing_add,Donation_Amount*marketing_comm/100*10**6);
+            Token(usdt_address).transferFrom(msg.sender,marketing_add,(Donation_Amount*marketing_comm)/(100*10**6));
             Token(usdt_address).transferFrom(msg.sender,owner1,350000);
             Token(usdt_address).transferFrom(msg.sender,owner2,450000);
             Token(usdt_address).transferFrom(msg.sender,owner3,200000);
@@ -300,12 +301,12 @@ contract IMF_MLM
             require(msg.sender==owner1,"only Owner can call this function");
             owner1 = _owner;
         }
-        // function Donate_test() external 
-        // {
+        function Donate_test() external view returns(uint)
+        {
 
-        //     Token(usdt_address).transferFrom(msg.sender,marketing_add,10000000);
+           return ((Donation_Amount*Direct_comm)/(100*10**6));
 
-        // }
+        }
 
 
     }
