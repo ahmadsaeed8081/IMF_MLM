@@ -7,35 +7,51 @@ import Header from "../../components/header";
 const FAQS = () => {
   const [accordions, setAccordion] = useState([
     {
+
       key: 1,
-      title: "What is Crypto Pannel Token?",
-      data: "Through Buy4Less, $EBM holders can purchase various cryptocurrencies at discounted rates ranging from 0.1% to 10% basing on monthly average $EBM holdings.",
+      title: "What is IMF?",
+      data: " IMFund is a mutual aid queueing system that enables everyone on the waiting line to get paid double or 60% and above of their donations. IMF maintains a zero balance at all times hence it’s risk free and not susceptible to hackers. The main goal of this project is to save the world from scam and eradicate poverty in the world.",
       isOpen: false,
     },
     {
       key: 2,
-      title: "What cryptocurrencies can I use to purchase?",
-      data: "This staking opportunity is exclusive to the presale buyers to grow their investment with native $EBM token rewards during the presale before listing $EBM for trade for limited period.",
+      title: "How does IMF earning percentages work?",
+      data: "You can earn your cash back and 60% increase of your donation when you don’t invite any member.You can earn 92% when you invite two members, you can earn 76% when you invite one member, And you can 100% and above when you invite more than 3 members",
       isOpen: false,
     },
     {
       key: 3,
-      title: "How can I participate in the Crypto Website?",
-      data: "By staking $EBM tokens, community members can earn passive income through daily automated distribution of 40-60% of the company's revenue, fostering community engagement and financial growth.",
+      title: "How much is the minimum and maximum?",
+      data: "IMF has no minimum or maximum amount. IMF operates on the principle of equality. There is only a fixed amount of 50 USDT Matic for all.      ",
       isOpen: false,
     },
     {
       key: 4,
-      title: "How do I benefit from the Crypto Website Token?",
-      data: "Upon starting of operations, the program start will be announced. Like staking in native token rewards but this staking will reward in USDT/USDC on daily basis.",
+      title: "Who is the creator of the IMF?",
+      data: "Knowing the creator is crucial in a traditional centralized system. Similar to Bitcoin, IMF also utilizes blockchain technology with polygon smart contracts created by anonymous developers. Trust is not necessary when we can validate all transactions on the blockchain. In the IMF, the smart code is our laws.",
       isOpen: false,
     },
     {
       key: 5,
-      title: "How do I benefit from the Pannel Token?",
-      data: "Other than Buy4Less and Stake4PIE, we aim to boost growth of True DeFi blockchains like Bitcoin, Litecoin, Zilliqa, Ethereum Classic, Raven, Kaspa, Dodge, BlockDAG etc.",
+      title: "Can I earn income without recruiting any member?      ",
+      data: " Participants can earn up to 60% of their income from each queue cycle without needing to recruit anyone. However, by building a team, they can earn an unlimited amount of $8 from each person they invite. The system model allows both participants and leaders to make unlimited profits.      ",
       isOpen: false,
     },
+
+    {
+      key: 6,
+      title: "What is the risk of participating in the IMF? ",
+      data: " The main downside of being part of the IMF is the time you have to wait. It's similar to the risk of waiting in line at the Bank to withdraw your money.",
+      isOpen: false,
+    },
+
+    {
+      key: 7,
+      title: "How does the IMF fund its maintenance and marketing budget when it has a zero balance contract?",
+      data: "The IMF has a carefully planned budget for marketing and maintenance costs. The budget is funded by IMF members, who each contribute a small percentage from donations made through the smart contract.      ",
+      isOpen: false,
+    },
+    
   ]);
 
   const toggleAccordion = (accordionkey) => {

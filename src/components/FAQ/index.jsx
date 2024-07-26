@@ -6,14 +6,14 @@ const FAQ = () => {
         {
           key: 1,
           title:
-            "What is Crypto Pannel Token?",
-          data: "Through Buy4Less, $EBM holders can purchase various cryptocurrencies at discounted rates ranging from 0.1% to 10% basing on monthly average $EBM holdings.",
+            "What is IMF?",
+          data: " IMFund is a mutual aid queueing system that enables everyone on the waiting line to get paid double or 60% and above of their donations. IMF maintains a zero balance at all times hence it’s risk free and not susceptible to hackers. The main goal of this project is to save the world from scam and eradicate poverty in the world.",
           isOpen: false,
         },
         {
           key: 2,
           title:
-            "What cryptocurrencies can I use to purchase?",
+            "What cryptocurrenciesff can I use to purchase?",
             data: "This staking opportunity is exclusive to the presale buyers to grow their investment with native $EBM token rewards during the presale before listing $EBM for trade for limited period.",
             isOpen: false,
         },

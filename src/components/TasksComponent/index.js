@@ -1,6 +1,60 @@
 import React from "react";
 
-const TasksComponents = () => {
+const TasksComponents = (props) => {
+
+
+  const teamMembers = [
+    {
+      name: "Total Donations",
+      role: Number(props.totalbusiness)/10**6 + " USDT",
+      image: require("../../assets/images/d3.png"),
+    },
+    {
+      name: "Position in Queue",
+      role: Number(props.position),
+      para3:"Your position has been changed due to automatic placement",
+  
+      image: require("../../assets/images/d2.png"),
+    },
+    {
+      name: "Donation Placement",
+      role: ((Number(props.donation_ahead_count)*16) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
+      
+      para3: ((Number(props.donation_ahead_count)*16) + Number(props.donationCount) ) > 0 ?
+      ((16 - Number(props.donationCount)) +" donations left to move ahead of queue") : (null),
+
+
+      para4:Number(props.donation_ahead_count)>0 ? Number(props.donation_ahead_count)+ " times your address has been moved ahead of the queue by donations":null,
+  
+      image: require("../../assets/images/d4.png"),
+  
+    },
+    {
+      name: "Queue Reward",
+      role: (Number(props.queueRew)/10**6)/40+ " times (" + Number(props.queueRew)/10**6 +" USDT)",
+      image: require("../../assets/images/d1.png"),
+  
+    },
+    {
+      name: "Your Referral Code : " + Number(props.refCode),
+      role: "Used: "+ Number(props.totalReferrals)+ " times",
+      para3:"Total Ref Earning: "+ Number(props.RefEarning)/10**6+ " USDT",
+      para4:<p>Sponsor's Code : {Number(props.upliner)} | Current code in use : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
+      image: require("../../assets/images/d6.png"),
+    },
+    {
+      name: "Referral Placement",
+      role:( Number(props.totalReferrals)) > 0 ? (10 - Number(props.totalReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
+      image: require("../../assets/images/d5.png"),
+  
+      // para3:"5 referrals left to move ahead of queue",
+      para4:(Number(props.ref_ahead_count)) > 0 ?(Number(props.ref_ahead_count))+ " times, your address ha been moved ahead of the queue by referral code" : null,
+  
+    },
+    
+  ];
+
+
   return (
     <div id="taskSection" className="tw-bg-cover  tw-relative tw-bg-center">
       <div className="container  tw-pb-6  tw-pt-6">
@@ -46,50 +100,6 @@ const TasksComponents = () => {
   );
 };
 
-const teamMembers = [
-  {
-    name: "Total Donation",
-    role: "4000 (25000 USDT)",
-    image: require("../../assets/images/d3.png"),
-  },
-  {
-    name: "Position in Queue",
-    role: "300",
-    para3:"Your position has been changed due to automatic placement",
 
-    image: require("../../assets/images/d2.png"),
-  },
-  {
-    name: "Provided Help",
-    role: "20 times (150 USDT)",
-    para3:"4 donations left to move ahead of queue",
-    para4:"4 times your address has been moved ahead of the queue by donations",
-
-    image: require("../../assets/images/d4.png"),
-
-  },
-  {
-    name: "Recieved Help",
-    role: "9 times (300 USDT)",
-    image: require("../../assets/images/d1.png"),
-
-  },
-  {
-    name: "Your Referral Code",
-    role: "10",
-    para3:"Your referral code will be activated after you donate",
-    image: require("../../assets/images/d6.png"),
-  },
-  {
-    name: "Referral Code Has Been Used",
-    role: "30 times since joining",
-    image: require("../../assets/images/d5.png"),
-
-    para3:"5 referrals left to move ahead of queue",
-    para4:"7 times, your address ha been movedahead of the queue by referral code",
-
-  },
-  
-];
 
 export default TasksComponents;
