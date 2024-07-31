@@ -18,11 +18,11 @@ const Footer = () => {
             <div className="col-md-2">
              <div className=" tw-flex  sm:tw-justify-start tw-justify-center tw-items-center tw-gap-2"> 
              <div>
-             <img src={require("../../assets/images/white_logo.png")} className="" />
+             <img src={require("../../assets/images/imf_logo.png")} height={"45px"} width={"45px"} className="" />
              </div>
-           <div>
+           {/* <div>
            <h2 className="   tw-font-bold tw-text-white">IMF</h2>
-           </div>
+           </div> */}
              </div>
              
              
@@ -37,7 +37,7 @@ const Footer = () => {
               <Link to={'https://polygonscan.com/address/'+cont_address} target="_blank" className=" ">
 
               <div className=" tw-flex tw-items-center tw-gap-4">
-                <span className=" tw-text-white tw-font-semibold tw-text-xl">Transection History    </span>
+                <span className=" tw-text-white tw-font-semibold tw-text-xl">Transaction History    </span>
                 <p className=" tw-pt-1 tw-m-0 tw-text-lg  tw-leading-4 tw-font-semibold tw-text-white tw-border-white tw-border-b">Here</p>
               </div>
 

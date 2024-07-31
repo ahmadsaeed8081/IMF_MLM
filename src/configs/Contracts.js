@@ -1,5 +1,5 @@
 
-export const cont_address="0x64a8dc8cCBbD9020E80870218A72F43Cd2cb7e7a"
+export const cont_address="0xC33361A3362883339C5E4f044442abB0D805E004"
 export const usdt_address="0x341343568948459e5b7017eDDb05110cfA3EF699";
 
 
@@ -38,7 +38,13 @@ export const cont_abi=[
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_add",
+				"type": "address"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -64,6 +70,19 @@ export const cont_abi=[
 	{
 		"inputs": [],
 		"name": "Direct_comm",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Donate_test",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -210,6 +229,25 @@ export const cont_abi=[
 	{
 		"inputs": [],
 		"name": "queue_comm",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "sponsorOf",
 		"outputs": [
 			{
 				"internalType": "uint256",

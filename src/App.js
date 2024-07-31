@@ -20,6 +20,7 @@ function App() {
   const [isRefActive, set_isRefActive] = useState(false);
   const [consecutiveRef, set_consecutiveRef] = useState(0);
   const [upliner, set_upliner] = useState(0);
+  const [sponsor, set_sponsor] = useState(0);
 
 
   const [consecutiveEarning, set_consecutiveEarning] = useState(0);
@@ -78,6 +79,8 @@ useEffect(()=>{
        postion = await imf_contract.methods.get_queuePosition().call({ from: address }); 
 
        user = await imf_contract.methods.user(address).call();      
+      let sponsor = await imf_contract.methods.sponsorOf(address).call();      
+
        upliner_code = await imf_contract.methods.user(user[6]).call(); 
        business = await imf_contract.methods.Total_Donations().call(); 
 
@@ -97,6 +100,7 @@ useEffect(()=>{
 
 
       set_upliner(upliner_code[2])
+      set_sponsor(sponsor)
 
       set_usdtBalance(USDTBalance)
       set_position(postion)
@@ -115,7 +119,7 @@ useEffect(()=>{
       <div className="app-container">
         <Routes>
 
-          <Route path="/" element={<Home totalbusiness={totalbusiness} ref_ahead_count={ref_ahead_count} donation_ahead_count={donation_ahead_count} RefEarning={RefEarning} queueRew={queueRew} consecutiveEarning={consecutiveEarning} upliner={upliner} consecutiveRef={consecutiveRef} test={test} usdtBalance={usdtBalance} position={position} totalReferrals={totalReferrals} isRefActive={isRefActive} totalDonation={totalDonation} donationCount={donationCount} refCode={refCode}  />} />
+          <Route path="/" element={<Home sponsor={sponsor} totalbusiness={totalbusiness} ref_ahead_count={ref_ahead_count} donation_ahead_count={donation_ahead_count} RefEarning={RefEarning} queueRew={queueRew} consecutiveEarning={consecutiveEarning} upliner={upliner} consecutiveRef={consecutiveRef} test={test} usdtBalance={usdtBalance} position={position} totalReferrals={totalReferrals} isRefActive={isRefActive} totalDonation={totalDonation} donationCount={donationCount} refCode={refCode}  />} />
           
           <Route path="/faqs" element={<FAQS />} />
 

@@ -60,20 +60,20 @@ contract IMF_MLM
 
         uint public total_members;
 
-        constructor()
+        constructor(address _add)
         {
-            user[msg.sender].total_donation+=Donation_Amount;
-            user[msg.sender].ref_activate = true;
-            user[msg.sender].ref_code = total_members+1;
-            user[msg.sender].donation_count++;
-            codeToAdress[total_members+1]=msg.sender;
+            user[_add].total_donation+=Donation_Amount;
+            user[_add].ref_activate = true;
+            user[_add].ref_code = total_members+1;
+            user[_add].donation_count++;
+            codeToAdress[total_members+1]=_add;
             Total_Donations += Donation_Amount;
 
             total_members++;
 
             queueData memory temp_data;
 
-            temp_data.add=msg.sender;
+            temp_data.add=_add;
             temp_data.jump_up=false;
             temp_data.transfer_count=0;
 
@@ -89,11 +89,7 @@ contract IMF_MLM
             {
                 queue_array[i] = queue_array[i+1];
              
-       /**
-        * @dev Function to donate tokens and manage referral system.
-        * @param ref_code The reference code of the user who referred the sender.
-        * @return bool Returns true if successful, false otherwise.
-        */      }
+            }
             queue_array.pop();
 
         }
@@ -101,7 +97,13 @@ contract IMF_MLM
 
         function Donate(uint ref_code) external returns(bool)
         {
-            address _ref= codeToAdress[ref_code];
+                       
+            /**
+             * @dev This function allows a user to donate a certain amount of USDT tokens to another user. The function checks if the sender has enough balance and allowance before proceeding with the donation. If successful, it also handles different scenarios like referral system, queue system, reward system etc. 
+             *
+             * @param ref_code The code of the referrer who referred the donating user to this contract.
+             * @return Returns true if the function execution is successful otherwise false.
+             */ address _ref= codeToAdress[ref_code];
             require(user[_ref].ref_activate);
             require(!user[msg.sender].ref_activate);
             require(Token(usdt_address).balanceOf(msg.sender) >= Donation_Amount ,"not enough usdt");

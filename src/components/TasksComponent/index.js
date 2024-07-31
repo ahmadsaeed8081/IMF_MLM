@@ -10,18 +10,11 @@ const TasksComponents = (props) => {
       image: require("../../assets/images/d3.png"),
     },
     {
-      name: "Position in Queue",
-      role: Number(props.position),
-      para3:"Your position has been changed due to automatic placement",
-  
-      image: require("../../assets/images/d2.png"),
-    },
-    {
       name: "Donation Placement",
-      role: ((Number(props.donation_ahead_count)*16) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
+      role: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
       
-      para3: ((Number(props.donation_ahead_count)*16) + Number(props.donationCount) ) > 0 ?
-      ((16 - Number(props.donationCount)) +" donations left to move ahead of queue") : (null),
+      para3: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) ) > 0 ?
+      ((5 - Number(props.donationCount)) +" donations left to move ahead of queue") : (null),
 
 
       para4:Number(props.donation_ahead_count)>0 ? Number(props.donation_ahead_count)+ " times your address has been moved ahead of the queue by donations":null,
@@ -29,6 +22,14 @@ const TasksComponents = (props) => {
       image: require("../../assets/images/d4.png"),
   
     },
+    {
+      name: "Position in Queue",
+      role: Number(props.position),
+      para3:"Your position has been changed due to automatic placement",
+  
+      image: require("../../assets/images/d2.png"),
+    },
+
     {
       name: "Queue Reward",
       role: (Number(props.queueRew)/10**6)/40+ " times (" + Number(props.queueRew)/10**6 +" USDT)",
@@ -39,7 +40,7 @@ const TasksComponents = (props) => {
       name: "Your Referral Code : " + Number(props.refCode),
       role: "Used: "+ Number(props.totalReferrals)+ " times",
       para3:"Total Ref Earning: "+ Number(props.RefEarning)/10**6+ " USDT",
-      para4:<p>Sponsor's Code : {Number(props.upliner)} | Current code in use : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
+      para4:<p>Sponsor's Code : {Number(props.sponsor)}  | Current code in use {Number(props.upliner)} | Used : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
       image: require("../../assets/images/d6.png"),
     },
     {
