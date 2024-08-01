@@ -76,8 +76,8 @@ useEffect(()=>{
 
        USDTBalance = await USDT_contract.methods.balanceOf(address).call(); 
      
-       postion = await imf_contract.methods.get_queuePosition().call({ from: "0x28C14f89779702655e860aE57f0B26c562265523" }); 
-      alert(postion)
+       postion = await imf_contract.methods.get_queuePosition().call({ from: address }); 
+
        user = await imf_contract.methods.user(address).call();      
       let sponsor = await imf_contract.methods.sponsorOf(address).call();      
 
