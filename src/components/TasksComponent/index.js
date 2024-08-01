@@ -25,22 +25,22 @@ const TasksComponents = (props) => {
     {
       name: "Position in Queue",
       role: Number(props.position),
-      para3:"Your position has been changed due to automatic placement",
+      para4:"Note: Your position can be changed due to automatic placement",
   
       image: require("../../assets/images/d2.png"),
     },
 
     {
-      name: "Queue Reward",
+      name: "Queue Rewards",
       role: (Number(props.queueRew)/10**6)/40+ " times (" + Number(props.queueRew)/10**6 +" USDT)",
       image: require("../../assets/images/d1.png"),
   
     },
     {
       name: "Your Referral Code : " + Number(props.refCode),
-      role: "Used: "+ Number(props.totalReferrals)+ " times",
+      role: "Used: "+ (( Number(props.ref_ahead_count) * 10 ) + (Number(props.totalReferrals))) + " times",
       para3:"Total Ref Earning: "+ Number(props.RefEarning)/10**6+ " USDT",
-      para4:<p>Sponsor's Code : {Number(props.sponsor)}  | Current code in use {Number(props.upliner)} | Used : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
+      para4:<p>Sponsor : {Number(props.sponsor)}  | code in use {Number(props.upliner)} | Used : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
       image: require("../../assets/images/d6.png"),
     },
     {
