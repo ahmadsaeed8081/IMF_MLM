@@ -1,5 +1,5 @@
 
-export const cont_address="0xC33361A3362883339C5E4f044442abB0D805E004"
+export const cont_address="0xD3b00cCC2735144dDb2Cc9402Bc20218FD469954"
 export const usdt_address="0x341343568948459e5b7017eDDb05110cfA3EF699";
 
 
