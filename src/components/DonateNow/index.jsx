@@ -100,7 +100,7 @@ const DonateNow = (props) => {
       const user = await imf_contract.methods.user(add).call();  
       if(!user[4])
       {
-        alert("Given Ref code is Deactivated, use a different Ref code")
+        alert("Given Ref code is Deactivated, contact your sponsor")
         return;
       }
 
