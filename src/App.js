@@ -75,10 +75,10 @@ useEffect(()=>{
        balance  =await  web3.eth.getBalance(address)
 
        USDTBalance = await USDT_contract.methods.balanceOf(address).call(); 
-     
        postion = await imf_contract.methods.get_queuePosition().call({ from: address }); 
 
-       user = await imf_contract.methods.user(address).call();      
+       user = await imf_contract.methods.user(address).call();    
+  
       let sponsor = await imf_contract.methods.sponsorOf(address).call();      
 
        upliner_code = await imf_contract.methods.user(user[6]).call(); 
@@ -107,7 +107,6 @@ useEffect(()=>{
     }
 
 
- 
 
 
   }  

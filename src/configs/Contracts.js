@@ -28,19 +28,6 @@ export const cont_abi=[
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "_add",
 				"type": "address"
 			}
@@ -70,19 +57,6 @@ export const cont_abi=[
 	{
 		"inputs": [],
 		"name": "Direct_comm",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "Donate_test",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -213,11 +187,6 @@ export const cont_abi=[
 				"type": "address"
 			},
 			{
-				"internalType": "uint256",
-				"name": "transfer_count",
-				"type": "uint256"
-			},
-			{
 				"internalType": "bool",
 				"name": "jump_up",
 				"type": "bool"
@@ -229,6 +198,19 @@ export const cont_abi=[
 	{
 		"inputs": [],
 		"name": "queue_comm",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "reinvest_rew",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -355,11 +337,6 @@ export const cont_abi=[
 			{
 				"internalType": "uint256",
 				"name": "ref_consecutive_earning",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "donation_ahead_count",
 				"type": "uint256"
 			},
 			{

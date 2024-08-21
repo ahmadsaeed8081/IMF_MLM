@@ -34,7 +34,8 @@ contract IMF
             
         }
 
-        address public usdt_address=0xc2132D05D31c914a87C6611C10748AEb04B58e8F;
+        address public usdt_address=0x341343568948459e5b7017eDDb05110cfA3EF699;
+        // address public usdt_address=0xc2132D05D31c914a87C6611C10748AEb04B58e8F;
 
         address public owner1=0x2039bF16F99cF99f41FA097D29e7ef326E665F2B;
         address public owner2=0xA2f92E94a7f86E34D742901D28fB768c02342881;
@@ -126,16 +127,6 @@ contract IMF
                 user[msg.sender].upliner = _ref;
                 user[msg.sender].donation_count++;
                 Total_Donations += Donation_Amount;
-
-
-                // if(user[msg.sender].upliner==address(0) || user[msg.sender].upliner==_ref)
-                // {
-                //     user[msg.sender].ref_consecutive_count++;
-                // }
-                // else
-                // {
-                //     user[msg.sender].ref_consecutive_count=1;
-                // }
 
 
                 temp_data.add=msg.sender;
