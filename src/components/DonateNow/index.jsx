@@ -59,7 +59,7 @@ const DonateNow = (props) => {
         const tx = await writeContractAsync({
           abi: token_abi,
           address: usdt_address,
-          args: [cont_address, "50000000"],
+          args: [cont_address, "30000000"],
           functionName: "approve",
 
         }); 
