@@ -5,14 +5,14 @@ const TasksComponents = (props) => {
 
   const teamMembers = [
     {
-      name: "Total Donations",
+      name: "Paid Donations",
       role: Number(props.totalbusiness)/10**6 + " USDT",
-      para3: <p style={{ color:"#044775" }}>The funds that the smart contract has distributed to members while maintaining a balance</p>,
+      para3: <p style={{ color:"#044775" }}>The funds that the smart contract has distributed to members while maintaining a zero balance</p>,
 
       image: require("../../assets/images/d3.png"),
     },
     // {
-    //   name: "Donation Placement",
+    //   name: "Personal Donations",
     //   role: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
       
     //   para3: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) ) > 0 ?
@@ -40,14 +40,14 @@ const TasksComponents = (props) => {
     },
     {
       name: "Your Referral Code : " + Number(props.refCode),
-      role: "Used: "+ (( Number(props.ref_ahead_count) * 10 ) + (Number(props.totalReferrals))) + " times",
+      role: "Used: "+ (( Number(props.ref_ahead_count) * 5 ) + (Number(props.totalReferrals))) + " times",
       para3:"Total Ref Earning: "+ Number(props.RefEarning)/10**6+ " USDT",
       para4:<p>Sponsor : {Number(props.sponsor)}  | code in use {Number(props.upliner)} | Used : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
       image: require("../../assets/images/d6.png"),
     },
     {
       name: "Referral Placement",
-      role:( Number(props.totalReferrals)) > 0 ? (10 - Number(props.totalReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
+      role:( Number(props.totalReferrals)) > 0 ? (5 - Number(props.totalReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
       image: require("../../assets/images/d5.png"),
   
       // para3:"5 referrals left to move ahead of queue",

@@ -95,8 +95,8 @@ useEffect(()=>{
       set_RefEarning(user[8])
       set_totalbusiness(business)
 
-      set_donation_ahead_count(user[10])
-      set_ref_ahead_count(user[11])
+      // set_donation_ahead_count(user[10])
+      set_ref_ahead_count(user[10])
 
 
       set_upliner(upliner_code[2])
