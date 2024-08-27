@@ -11,19 +11,19 @@ const TasksComponents = (props) => {
 
       image: require("../../assets/images/d3.png"),
     },
-    // {
-    //   name: "Personal Donations",
-    //   role: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
+    {
+      name: "Personal Donations",
+      role: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
       
-    //   para3: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) ) > 0 ?
-    //   ((5 - Number(props.donationCount)) +" donations left to move ahead of queue") : (null),
+      // para3: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) ) > 0 ?
+      // ((5 - Number(props.donationCount)) +" donations left to move ahead of queue") : (null),
 
 
-    //   para4:Number(props.donation_ahead_count)>0 ? Number(props.donation_ahead_count)+ " times your address has been moved ahead of the queue by donations":null,
+      // para4:Number(props.donation_ahead_count)>0 ? Number(props.donation_ahead_count)+ " times your address has been moved ahead of the queue by donations":null,
   
-    //   image: require("../../assets/images/d4.png"),
+      image: require("../../assets/images/d4.png"),
   
-    // },
+    },
     {
       name: "Position in Queue",
       role: Number(props.position),
