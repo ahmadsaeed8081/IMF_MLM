@@ -92,7 +92,6 @@ useEffect(()=>{
       set_isRefActive(user[4])
       set_consecutiveRef(user[5])
       set_consecutiveEarning(user[9])
-      alert(user[11])
       set_cashback(user[11])
 
       set_queueRew(user[7])
