@@ -34,6 +34,7 @@ function App() {
  
   const [usdtBalance, set_usdtBalance] = useState(0);
   const [position, set_position] = useState(0);
+  const [cashBack, set_cashback] = useState(0);
 
   const { address, isConnecting ,isDisconnected,isConnected} = useAccount()
   let count=0
@@ -91,6 +92,9 @@ useEffect(()=>{
       set_isRefActive(user[4])
       set_consecutiveRef(user[5])
       set_consecutiveEarning(user[9])
+      alert(user[11])
+      set_cashback(user[11])
+
       set_queueRew(user[7])
       set_RefEarning(user[8])
       set_totalbusiness(business)
@@ -118,7 +122,7 @@ useEffect(()=>{
       <div className="app-container">
         <Routes>
 
-          <Route path="/" element={<Home sponsor={sponsor} totalbusiness={totalbusiness} ref_ahead_count={ref_ahead_count} donation_ahead_count={donation_ahead_count} RefEarning={RefEarning} queueRew={queueRew} consecutiveEarning={consecutiveEarning} upliner={upliner} consecutiveRef={consecutiveRef} test={test} usdtBalance={usdtBalance} position={position} totalReferrals={totalReferrals} isRefActive={isRefActive} totalDonation={totalDonation} donationCount={donationCount} refCode={refCode}  />} />
+          <Route path="/" element={<Home cashBack={cashBack} sponsor={sponsor} totalbusiness={totalbusiness} ref_ahead_count={ref_ahead_count} donation_ahead_count={donation_ahead_count} RefEarning={RefEarning} queueRew={queueRew} consecutiveEarning={consecutiveEarning} upliner={upliner} consecutiveRef={consecutiveRef} test={test} usdtBalance={usdtBalance} position={position} totalReferrals={totalReferrals} isRefActive={isRefActive} totalDonation={totalDonation} donationCount={donationCount} refCode={refCode}  />} />
           
           <Route path="/faqs" element={<FAQS />} />
 

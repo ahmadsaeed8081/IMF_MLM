@@ -34,7 +34,8 @@ const TasksComponents = (props) => {
 
     {
       name: "Queue Rewards",
-      role: (Number(props.queueRew)/10**6)/40+ " times (" + Number(props.queueRew)/10**6 +" USDT)",
+      para3:<p >{(Number(props.cashBack)/10**6)/20} times ( { Number(props.cashBack)/10**6 } USDT) CashBack <br></br> {(Number(props.queueRew)/10**6)/30} times ( { Number(props.queueRew)/10**6} USDT) Self-Payment</p> ,
+      
       image: require("../../assets/images/d1.png"),
   
     },

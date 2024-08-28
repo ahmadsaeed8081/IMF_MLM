@@ -1,5 +1,5 @@
 
-export const cont_address="0x0A1af42382ddCADBfF3E504eAB2264340bA97784";//0x2ba56Fa5c9D0A0f0b25D6c50431ea6283d38d773
+export const cont_address="0xb27ac9428597C1f436273AA1716627ee5818d265";//0x2ba56Fa5c9D0A0f0b25D6c50431ea6283d38d773
 export const usdt_address="0x341343568948459e5b7017eDDb05110cfA3EF699";
 
 
@@ -342,6 +342,11 @@ export const cont_abi=[
 			{
 				"internalType": "uint256",
 				"name": "ref_ahead_count",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "cashBack",
 				"type": "uint256"
 			}
 		],
