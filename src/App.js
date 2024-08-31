@@ -73,14 +73,14 @@ useEffect(()=>{
     
     if(isConnected)
     {
-       balance  =await  web3.eth.getBalance("0xc2803F55442139548b2EF3e77226df6f66867Da0")
+       balance  =await  web3.eth.getBalance(address)
 
-       USDTBalance = await USDT_contract.methods.balanceOf("0xc2803F55442139548b2EF3e77226df6f66867Da0").call(); 
-       postion = await imf_contract.methods.get_queuePosition().call({ from: "0xc2803F55442139548b2EF3e77226df6f66867Da0" }); 
+       USDTBalance = await USDT_contract.methods.balanceOf(address).call(); 
+       postion = await imf_contract.methods.get_queuePosition().call({ from: address }); 
 
-       user = await imf_contract.methods.user("0xc2803F55442139548b2EF3e77226df6f66867Da0").call();    
+       user = await imf_contract.methods.user(address).call();    
   
-      let sponsor = await imf_contract.methods.sponsorOf("0xc2803F55442139548b2EF3e77226df6f66867Da0").call();      
+      let sponsor = await imf_contract.methods.sponsorOf(address).call();      
 
        upliner_code = await imf_contract.methods.user(user[6]).call(); 
        business = await imf_contract.methods.Total_Donations().call(); 
