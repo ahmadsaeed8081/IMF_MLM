@@ -24,6 +24,7 @@ contract IMF
             uint ref_earning;
             uint ref_consecutive_earning;
             uint ref_ahead_count;
+            uint cashBack;
             
         }
         
@@ -107,7 +108,7 @@ contract IMF
             
             queueData memory temp_data;
 
-            if(user[msg.sender].total_donation==0 || (user[msg.sender].donation_count+1) % 5==0 )
+            if(user[msg.sender].total_donation==0 || (user[msg.sender].donation_count+1) % 2==1 )
             {
 
                 if(user[msg.sender].total_donation==0 )
@@ -200,6 +201,7 @@ contract IMF
                 user[msg.sender].ref_activate = true;
                 user[msg.sender].donation_count++;
                 Total_Donations += Donation_Amount;
+                user[msg.sender].cashBack+=reinvest_rew;
 
                 if(user[msg.sender].upliner==address(0) || user[msg.sender].upliner==_ref)
                 {
@@ -217,12 +219,11 @@ contract IMF
 
                 queue_array.push(temp_data);
 
-                user[queue_array[0].add].queue_rew += reinvest_rew;
                 Token(usdt_address).transferFrom(msg.sender,msg.sender,reinvest_rew);
                 
                 
 
-                if(user[msg.sender].ref_consecutive_count==4)
+                if(user[msg.sender].ref_consecutive_count==3)
                 {
                     Token(usdt_address).transferFrom(msg.sender,msg.sender, Direct_comm);
                     user[msg.sender].ref_consecutive_count=0;
