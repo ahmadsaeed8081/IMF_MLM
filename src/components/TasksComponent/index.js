@@ -13,7 +13,7 @@ const TasksComponents = (props) => {
     },
     {
       name: "Personal Donations",
-      role: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
+      role: ( Number(props.donationCount) )+ " times (" + Number(props.totalDonation)/10**6 +" USDT)",
       
       // para3: ((Number(props.donation_ahead_count)*5) + Number(props.donationCount) ) > 0 ?
       // ((5 - Number(props.donationCount)) +" donations left to move ahead of queue") : (null),
@@ -48,7 +48,7 @@ const TasksComponents = (props) => {
     },
     {
       name: "Referral Placement",
-      role:( Number(props.totalReferrals)) > 0 ? (5 - Number(props.totalReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
+      role:( Number(props.totalReferrals)) > 0 ? (3 - Number(props.totalReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
       image: require("../../assets/images/d5.png"),
   
       // para3:"5 referrals left to move ahead of queue",
