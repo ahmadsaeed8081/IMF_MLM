@@ -17,6 +17,8 @@ function App() {
   const [donationCount, set_donationCount] = useState(0);
   const [refCode, set_refCode] = useState(0);
   const [totalReferrals, set_totalReferrals] = useState(0);
+  const [total_newReferrals, set_total_newReferrals] = useState(0);
+
   const [isRefActive, set_isRefActive] = useState(false);
   const [consecutiveRef, set_consecutiveRef] = useState(0);
   const [upliner, set_upliner] = useState(0);
@@ -84,7 +86,9 @@ useEffect(()=>{
 
        upliner_code = await imf_contract.methods.user(user[6]).call(); 
        business = await imf_contract.methods.Total_Donations().call(); 
+      let total_new_referrals = await imf_contract.methods.total_new_referrals(address).call(); 
 
+      set_total_newReferrals(total_new_referrals)
       set_totalDonation(user[0])
       set_donationCount(user[1])
       set_refCode(user[2])
@@ -121,7 +125,7 @@ useEffect(()=>{
       <div className="app-container">
         <Routes>
 
-          <Route path="/" element={<Home cashBack={cashBack} sponsor={sponsor} totalbusiness={totalbusiness} ref_ahead_count={ref_ahead_count} donation_ahead_count={donation_ahead_count} RefEarning={RefEarning} queueRew={queueRew} consecutiveEarning={consecutiveEarning} upliner={upliner} consecutiveRef={consecutiveRef} test={test} usdtBalance={usdtBalance} position={position} totalReferrals={totalReferrals} isRefActive={isRefActive} totalDonation={totalDonation} donationCount={donationCount} refCode={refCode}  />} />
+          <Route path="/" element={<Home total_newReferrals={total_newReferrals} cashBack={cashBack} sponsor={sponsor} totalbusiness={totalbusiness} ref_ahead_count={ref_ahead_count} donation_ahead_count={donation_ahead_count} RefEarning={RefEarning} queueRew={queueRew} consecutiveEarning={consecutiveEarning} upliner={upliner} consecutiveRef={consecutiveRef} test={test} usdtBalance={usdtBalance} position={position} totalReferrals={totalReferrals} isRefActive={isRefActive} totalDonation={totalDonation} donationCount={donationCount} refCode={refCode}  />} />
           
           <Route path="/faqs" element={<FAQS />} />
 

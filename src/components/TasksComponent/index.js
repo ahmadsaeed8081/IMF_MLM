@@ -34,21 +34,21 @@ const TasksComponents = (props) => {
 
     {
       name: "Queue Rewards",
-      para3:<p >{(Number(props.cashBack)/10**6)/20} times ( { Number(props.cashBack)/10**6 } USDT) Self-Paymnet <br></br> {(Number(props.queueRew)/10**6)/30} times ( { Number(props.queueRew)/10**6} USDT) CashBack</p> ,
+      para3:<p >{(Number(props.cashBack)/10**6)/20} times ( { Number(props.cashBack)/10**6 } USDT) self-payment <br></br> {(Number(props.queueRew)/10**6)/30} times ( { Number(props.queueRew)/10**6} USDT) CashBack</p> ,
       
       image: require("../../assets/images/d1.png"),
   
     },
     {
       name: "Your Referral Code : " + Number(props.refCode),
-      role: "Used: "+ Number((( Number(props.ref_ahead_count) * 5 )) + (Number(props.totalReferrals))) + " times",
+      role: "Used: "+ (Number(props.totalReferrals)) + " times",
       para3:"Total Ref Earning: "+ Number(props.RefEarning)/10**6+ " USDT",
       para4:<p>Sponsor : {Number(props.sponsor)}  | code in use {Number(props.upliner)} | Used : {Number(props.consecutiveRef)} times <br></br> Loyality Bonus Earned : {Number(props.consecutiveEarning)/10**6}</p>,
       image: require("../../assets/images/d6.png"),
     },
     {
       name: "Referral Placement",
-      role:( Number(props.totalReferrals)) > 0 ? (3 - Number(props.totalReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
+      role:( Number(props.total_newReferrals)) > 0 ? (3 - Number(props.total_newReferrals)) +" referrals left to move ahead of queue" :"share ref code to move ahead in the queue" ,
       image: require("../../assets/images/d5.png"),
   
       // para3:"5 referrals left to move ahead of queue",

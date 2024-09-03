@@ -1,10 +1,34 @@
 
-export const cont_address="0xd9216Ece51A68B9f73398F2599C854AFb4077b47";//0x2ba56Fa5c9D0A0f0b25D6c50431ea6283d38d773
+export const cont_address="0x9B97d00620DAB2CFD35B6462cf0FfC6eDC22C63a";//0x2ba56Fa5c9D0A0f0b25D6c50431ea6283d38d773
 export const usdt_address="0x341343568948459e5b7017eDDb05110cfA3EF699";
 
 
 
 export const cont_abi=[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_add",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "Direct_comm",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
 	{
 		"inputs": [
 			{
@@ -25,15 +49,30 @@ export const cont_abi=[
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "Donation_Amount",
+		"outputs": [
 			{
-				"internalType": "address",
-				"name": "_add",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Total_Donations",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -49,32 +88,6 @@ export const cont_abi=[
 				"internalType": "address",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "Direct_comm",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "Donation_Amount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -109,19 +122,6 @@ export const cont_abi=[
 	{
 		"inputs": [],
 		"name": "marketing_comm",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner_comm",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -242,7 +242,7 @@ export const cont_abi=[
 	},
 	{
 		"inputs": [],
-		"name": "Total_Donations",
+		"name": "total_members",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -254,8 +254,14 @@ export const cont_abi=[
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "total_members",
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "total_new_referrals",
 		"outputs": [
 			{
 				"internalType": "uint256",
